@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+
+{% block content %} 
+
+<h1>🗂️ Git y GitHub: El Control de Versiones Esencial</h1>
+<p>
+    **Git** es el sistema de control de versiones distribuido más popular del mundo. Su propósito es llevar un registro completo de cada cambio realizado en los archivos de un proyecto, permitiéndonos retroceder en el tiempo, experimentar sin riesgos y colaborar eficientemente. **GitHub** es la plataforma más utilizada para alojar estos proyectos de forma remota en la nube.
+</p>
+---
+
+<h2>1. Git: El Sistema de Control Local</h2>
+<p>
+    Git funciona gestionando tres estados principales en nuestro proyecto local:
+</p>
+<ol>
+    <li>**Directorio de Trabajo:** Los archivos que estamos editando actualmente.</li>
+    <li>**Área de Staging (Index):** Donde marcamos los archivos que queremos incluir en la próxima "instantánea" o *commit*.</li>
+    <li>**Repositorio Local:** Donde se guardan todas las instantáneas (los *commits*) del proyecto.</li>
+</ol>
+
+<h3>Comandos Fundamentales Aprendidos:</h3>
+<ul>
+    <li>**<code>git init</code>:** Inicializa un nuevo repositorio de Git en una carpeta.</li>
+    <li>**<code>git add &lt;archivo&gt;</code>** o **<code>git add .</code>:** Mueve los archivos del directorio de trabajo al Área de Staging.</li>
+    <li>**<code>git commit -m "Mensaje descriptivo"</code>:** Crea la instantánea o *commit* final, guardando los cambios del Área de Staging en el repositorio local.</li>
+    <li>**<code>git status</code>:** Muestra el estado actual de los archivos (modificados, staged o sin seguimiento).</li>
+    <li>**<code>git log</code>:** Muestra el historial de todos los *commits* realizados.</li>
+</ul>
+
+---
+
+<h2>2. GitHub: La Plataforma Colaborativa</h2>
+<p>
+    **GitHub** (o plataformas similares como GitLab o Bitbucket) actúa como el **repositorio remoto**. Es una copia centralizada del proyecto, fundamental para el respaldo del código y la colaboración en equipo.
+</p>
+
+
+<h3>Sincronización con el Remoto:</h3>
+<p>
+    Una vez que los cambios están en nuestro repositorio local (*commits*), usamos comandos específicos para interactuar con GitHub:
+</p>
+<ul>
+    <li>**<code>git remote add origin &lt;url&gt;</code>:** Enlaza el repositorio local con el remoto por primera vez.</li>
+    <li>**<code>git push origin &lt;rama&gt;</code>:** Envía nuestros *commits* locales al repositorio remoto de GitHub.</li>
+    <li>**<code>git pull origin &lt;rama&gt;</code>:** Descarga los últimos cambios hechos por otros colaboradores desde GitHub a nuestro repositorio local.</li>
+</ul>
+
+---
+
+<h2>3. Flujo de Trabajo con Ramas (Branches)</h2>
+<p>
+    Las **ramas** son una característica crucial que nos permite trabajar en nuevas funcionalidades o arreglos sin afectar el código principal (generalmente la rama `main` o `master`) que está en producción o estable.
+</p>
+<ul>
+    <li>**<code>git branch &lt;nombre&gt;</code>:** Crea una nueva rama.</li>
+    <li>**<code>git checkout &lt;nombre&gt;</code>:** Cambia a esa rama para empezar a trabajar en ella.</li>
+    <li>**<code>git merge &lt;rama&gt;</code>:** Combina los cambios de una rama secundaria de vuelta a la rama principal una vez que el trabajo está terminado y probado.</li>
+</ul>
+<p>
+    **En resumen, Git garantiza que nunca se pierda un cambio y hace que el desarrollo en equipo sea organizado y seguro.**
+</p>
+
+{% endblock %}

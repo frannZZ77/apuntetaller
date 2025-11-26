@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+
+{% block content %} 
+
+<h1>🐍 Flask (Python): El Núcleo de Nuestro Back-End</h1>
+<p>
+    Flask es un **microframework** minimalista de Python diseñado para construir aplicaciones web de forma rápida y sencilla. Es la pieza central que gestiona la **lógica del servidor** (el "back-end"), actuando como intermediario entre la base de datos (si existe) y el navegador del usuario.
+</p>
+---
+
+<h2>1. Configuración y Ejecución</h2>
+<p>
+    El primer paso es crear la instancia de la aplicación, que es el objeto central que maneja todo. Luego, se ejecuta para que pueda escuchar las peticiones de los navegadores en un puerto específico (por defecto, el 5000).
+</p>
+<ul>
+    <li>**Instancia Central:** Se define con <code>app = Flask(__name__)</code>.</li>
+    <li>**Modo de Desarrollo:** Usamos `app.run(debug=True)` para activar el modo de depuración, que recarga el servidor automáticamente al guardar cambios y muestra errores detallados.</li>
+</ul>
+<p>
+    **Código Básico de Inicio:**
+    <pre><code>from flask import Flask
+app = Flask(__name__)
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+</p>
+
+---
+
+<h2>2. El Sistema de Enrutamiento (Routing)</h2>
+<p>
+    El **enrutamiento** es la habilidad clave de Flask. Permite asignar una URL específica (una ruta) a una función de Python, la cual se encargará de generar la respuesta para esa URL.
+</p>
+<ul>
+    <li>**Decoradores:** Utilizamos el decorador **`@app.route('/ruta')`** justo antes de una función para indicar a Flask que ejecute esa función cuando se visite esa ruta.</li>
+    <li>**Métodos HTTP:** Podemos especificar los métodos aceptados (GET, POST) usando el argumento <code>methods=['GET', 'POST']</code>.</li>
+    <li>**Argumentos Dinámicos:** Las rutas pueden capturar valores de la URL (ej: `/usuario/<nombre>`) y pasarlos como argumentos a la función.</li>
+</ul>
+<p>
+    **Ejemplo de Ruta y Función:**
+    <pre><code>@app.route('/saludo/&lt;nombre&gt;')
+def saludar(nombre):
+    # La variable 'nombre' viene directamente de la URL
+    return f'Hola, {nombre.capitalize()}! Bienvenido.'</code></pre>
+</p>
+
+
+---
+
+<h2>3. Renderización de Plantillas con Jinja2</h2>
+<p>
+    Para crear contenido web dinámico y complejo, Flask utiliza el motor de plantillas **Jinja2**. Esto permite separar la lógica de la aplicación (Python) de su presentación (HTML).
+</p>
+<ul>
+    <li>**Función Clave:** Usamos la función **`render_template()`** para buscar un archivo HTML en la carpeta `templates` y llenarlo con datos.</li>
+    <li>**Variables Dinámicas:** Dentro del HTML, usamos la sintaxis de doble llave **`{{ variable }}`** para insertar valores pasados desde la función de Flask.</li>
+    <li>**Herencia de Plantillas:** Aprendimos a usar `{% extends 'base.html' %}` y `{% block content %}` para reutilizar la estructura básica de la página (headers, footers, etc.) en múltiples archivos, promoviendo la consistencia.</li>
+</ul>
+<p>
+    **Ejemplo de Uso de Plantillas:**
+    <pre><code>from flask import render_template
+
+@app.route('/home')
+def home():
+    titulo = "Página de Inicio"
+    lista_items = ["Item 1", "Item 2", "Item 3"]
+    return render_template('index.html', titulo=titulo, items=lista_items)</code></pre>
+</p>
+
+---
+<h2>⚙️ El Alcance de Flask</h2>
+<p>
+    Flask nos enseñó el concepto de la **arquitectura cliente-servidor**. Es la base para manejar sesiones de usuario, procesar datos de formularios (POST) y servir páginas web complejas, siendo una herramienta versátil para pequeños proyectos y APIs.
+</p>
+
+{% endblock %}

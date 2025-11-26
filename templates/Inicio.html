@@ -1,0 +1,77 @@
+{% extends 'base.html'%}
+
+{% block content %} 
+
+<h1>🎓 Resumen Introductorio de las Herramientas del Taller</h1>
+<p>
+    A continuación, se presenta una introducción detallada a cada tecnología, destacando su rol esencial y los conceptos fundamentales aprendidos durante el año.
+</p>
+---
+
+<h2>🐍 Flask: El Cerebro del Servidor</h2>
+<p>
+    Flask es un **microframework** de Python que actúa como el **back-end** (lado del servidor) de nuestra aplicación. Su función principal es recibir las solicitudes del navegador, ejecutar la lógica de negocio (escrita en Python) y generar una respuesta.
+</p>
+<ul>
+    <li>**Concepto Clave:** Aprender a definir **rutas** (`@app.route`) que mapean URLs a funciones específicas de Python.</li>
+    <li>**Habilidad Adquirida:** Uso de **Jinja2** para la renderización de plantillas HTML, permitiendo que las páginas web sean dinámicas.</li>
+    <li>**Alcance:** Manejo del ciclo de solicitud-respuesta (HTTP) y control de la información enviada al cliente.</li>
+</ul>
+
+---
+<h2>📜 HTML5: La Estructura del Contenido</h2>
+<p>
+    **HTML5** es el lenguaje de marcado que proporciona el **esqueleto** y la **estructura** semántica de la página web. Nos enfocamos en organizar el contenido de manera lógica y accesible, utilizando etiquetas que describen su propósito.
+</p>
+<ul>
+    <li>**Concepto Clave:** Uso de etiquetas **semánticas** (`<header>`, `<nav>`, `<section>`) para mejorar la organización y la optimización para motores de búsqueda (SEO).</li>
+    <li>**Habilidad Adquirida:** Creación y manejo de **formularios** (`<form>`), entendiendo cómo se envían los datos al servidor (Flask).</li>
+    <li>**Alcance:** Definición clara del contenido, desde párrafos y listas hasta la inserción de imágenes y videos.</li>
+</ul>
+
+
+---
+<h2>🎨 CSS3: Estilo y Diseño Visual</h2>
+<p>
+    **CSS3** es el lenguaje utilizado para dar **estilo visual** a la estructura HTML, controlando colores, tipografía, espaciado y la disposición de los elementos.
+</p>
+<ul>
+    <li>**Concepto Clave:** Dominio del **Modelo de Caja** (**Box Model**), que explica cómo el margen, el borde, el relleno (**padding**) y el contenido interactúan para ocupar espacio en la pantalla.</li>
+    <li>**Habilidad Adquirida:** Implementación de **Flexbox** (Layout Flexible) para posicionar elementos de manera eficiente y crear diseños responsivos que se adaptan a diferentes dispositivos.</li>
+    <li>**Alcance:** Separar completamente el estilo (CSS) de la estructura (HTML) para facilitar el mantenimiento y la consistencia del diseño.</li>
+</ul>
+
+---
+<h2>🧠 JavaScript (JS): Interactividad en el Navegador</h2>
+<p>
+    JavaScript es el lenguaje de programación que se ejecuta en el navegador (lado del cliente) para añadir **interactividad** y lógica dinámica a la página web.
+</p>
+<ul>
+    <li>**Concepto Clave:** Manipulación del **DOM** (Document Object Model), que es la representación en árbol de la página, permitiendo cambiar el contenido o estilo de cualquier elemento después de que la página ha cargado.</li>
+    <li>**Habilidad Adquirida:** Manejo de **eventos** (como `onclick` o `onsubmit`) para responder a las acciones del usuario.</li>
+    <li>**Alcance:** Validación de formularios, creación de animaciones y actualización de la interfaz de usuario sin recargar la página.</li>
+</ul>
+
+---
+<h2>🗂️ Git y GitHub: El Control de Versiones</h2>
+<p>
+    **Git** es un sistema de **control de versiones** local que permite rastrear y registrar cambios en el código. **GitHub** es una plataforma basada en la web que aloja los repositorios de Git, esencial para la colaboración y el respaldo del código.
+</p>
+<ul>
+    <li>**Concepto Clave:** El ciclo de trabajo fundamental: **`add`** (preparar), **`commit`** (guardar instantánea) y **`push`** (enviar al repositorio remoto).</li>
+    <li>**Habilidad Adquirida:** Creación y gestión de **ramas** (**`branch`**) para desarrollar nuevas características o corregir errores de forma aislada sin afectar la versión principal del proyecto.</li>
+    <li>**Alcance:** Trazabilidad completa de la historia del código y facilidad para el trabajo en equipo.</li>
+</ul>
+
+---
+<h2>🤖 Arduino: Programación de Hardware</h2>
+<p>
+    Arduino es una plataforma de prototipado electrónico que utiliza un microcontrolador (hardware) y un entorno de desarrollo (software) simple. Permite conectar el software a componentes físicos como luces, sensores y actuadores.
+</p>
+<ul>
+    <li>**Concepto Clave:** Estructura básica del código (**Sketch**), dividida en **`setup()`** (se ejecuta una vez al inicio) y **`loop()`** (se ejecuta repetidamente).</li>
+    <li>**Habilidad Adquirida:** Control de pines **digitales** (para encender/apagar componentes) y uso de **PWM** (Modulación por Ancho de Pulso) para simular salidas analógicas (como atenuar una luz).</li>
+    <li>**Alcance:** Desarrollo de proyectos interactivos que perciben y responden a su entorno físico.</li>
+</ul>
+
+{% endblock %}

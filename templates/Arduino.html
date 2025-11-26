@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block content %} 
+
+<h1>🤖 Arduino: Programación e Interacción con el Mundo Físico</h1>
+<p>
+    **Arduino** es una plataforma de prototipado electrónico de código abierto que consta de un hardware (la placa microcontroladora) y un software (el Entorno de Desarrollo Integrado o IDE). Su propósito principal es facilitar la creación de proyectos interactivos que perciben el entorno y responden a él, uniendo el software con el hardware.
+</p>
+---
+
+<h2>1. Estructura Básica de Programación (Sketch)</h2>
+<p>
+    El código que se escribe para Arduino se llama **Sketch** y sigue una estructura fija y simple basada en dos funciones esenciales escritas en un lenguaje similar a C/C++:
+</p>
+<ul>
+    <li>**<code>void setup()</code>:** Esta función se ejecuta **una sola vez** cuando la placa se enciende o se reinicia. Se utiliza para la configuración inicial, como definir el modo de operación de los pines (entrada o salida) y configurar la comunicación serial.
+        <pre><code>void setup() {
+  pinMode(13, OUTPUT); // Define el Pin 13 como una SALIDA
+}</code></pre>
+    </li>
+    <li>**<code>void loop()</code>:** Esta función se ejecuta **repetidamente y de forma continua** después de que `setup()` finaliza. Contiene la lógica principal del programa y se encarga de las tareas que deben repetirse (como leer un sensor, tomar una decisión o parpadear un LED).</li>
+</ul>
+
+
+---
+
+<h2>2. Manejo de Pines: Entradas y Salidas</h2>
+<p>
+    El corazón de Arduino es su capacidad para controlar sus **pines de entrada/salida (I/O)**, que permiten a la placa interactuar con componentes externos.
+</p>
+<ul>
+    <li>**Salidas Digitales:** Se utilizan para enviar señales de encendido (HIGH / 5V) o apagado (LOW / 0V). Un ejemplo clásico es encender y apagar un LED mediante <code>digitalWrite()</code>.</li>
+    <li>**Entradas Digitales:** Se utilizan para leer señales de componentes como botones o interruptores (HIGH/LOW). Se leen con la función <code>digitalRead()</code>.</li>
+    <li>**Salidas Analógicas (PWM):** Las salidas marcadas con una tilde (~) en la placa (como el Pin 9 o 10) permiten simular voltajes intermedios usando la Modulación por Ancho de Pulso (**PWM**). Esto se usa para cosas como controlar la velocidad de un motor o atenuar el brillo de un LED usando <code>analogWrite()</code>.</li>
+</ul>
+
+---
+
+<h2>3. Aplicaciones y Alcance</h2>
+<p>
+    La introducción a Arduino nos permite comprender los fundamentos de la **programación de bajo nivel** y la electrónica básica.
+</p>
+<ul>
+    <li>**Prototipado:** Es ideal para crear prototipos rápidos de dispositivos, desde sistemas de seguridad hasta domótica simple.</li>
+    <li>**Sensores y Actuadores:** Aprendimos a conectar y leer datos de sensores (temperatura, luz) y a controlar actuadores (motores, relés) para hacer que el proyecto haga algo útil en el mundo real.</li>
+    <li>**Lógica de Control:** El uso de estructuras condicionales (`if`/`else`) dentro del `loop()` es clave para tomar decisiones basadas en las lecturas de las entradas.</li>
+</ul>
+
+{% endblock %}
