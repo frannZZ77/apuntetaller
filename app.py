@@ -1,25 +1,22 @@
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route('/')
-def Inicio():
-    return render_template ('Inicio.html')
+def inicio():
+    return render_template('inicio.html')
 
+@app.route('/flask')
+def flask_page():
+    return render_template('flask.html')
 
-@app.route('/Arduino')
-def Arduino():
-    return render_template ('Arduino.html')
+@app.route('/git')
+def git():
+    return render_template('git.html')
 
+@app.route('/arduino')
+def arduino():
+    return render_template('arduino.html')
 
-@app.route('/Flask')
-def Flask():
-    return render_template ('Flask.html')
-
-@app.route('/Git')
-def Git():
-    return render_template ('Git.html')
-
-if __name__=='__main__':
-    app.run(debug=True)
-    
-    
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)

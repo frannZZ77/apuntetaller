@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
-    <title>Apunte</title>
+    <title>Apunte - Taller Web</title>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="{{ url_for('Inicio') }}"><button>Inicio</button></a>
-            <a href="{{ url_for('Flask') }}"><button>Flask</button></a>
-            <a href="{{ url_for('Git') }}"><button>Git</button></a>
-            <a href="{{ url_for('Arduino') }}"><button>Arduino</button></a>
+        <nav class="navbar">
+            <a href="{{ url_for('inicio') }}" class="nav-button">🏠 Inicio</a>
+            <a href="{{ url_for('flask_page') }}" class="nav-button">🐍 Flask</a>
+            <a href="{{ url_for('git') }}" class="nav-button">🗂️ Git</a>
+            <a href="{{ url_for('arduino') }}" class="nav-button">🤖 Arduino</a>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer>
+        <p>© 2024 - Taller de Desarrollo Web - Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>

@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <div class="page-header">
     <h1>🐍 Flask (Python): El Núcleo de Nuestro Back-End</h1>
     <p class="subtitle">Flask es un microframework minimalista de Python diseñado para construir aplicaciones web de forma rápida y sencilla. Es la pieza central que gestiona la lógica del servidor.</p>
@@ -16,6 +15,7 @@
     <div class="code-block">
         <h3>Código Básico de Inicio:</h3>
         <pre><code>from flask import Flask
+
 app = Flask(__name__)
 
 if __name__ == '__main__':
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     <ul>
         <li><strong>Decoradores:</strong> Utilizamos el decorador <code>@app.route('/ruta')</code> justo antes de una función para indicar a Flask que ejecute esa función cuando se visite esa ruta.</li>
         <li><strong>Métodos HTTP:</strong> Podemos especificar los métodos aceptados (GET, POST) usando el argumento <code>methods=['GET', 'POST']</code>.</li>
-        <li><strong>Argumentos Dinámicos:</strong> Las rutas pueden capturar valores de la URL (ej: <code>/usuario/&amp;lt;nombre&amp;gt;</code>) y pasarlos como argumentos a la función.</li>
+        <li><strong>Argumentos Dinámicos:</strong> Las rutas pueden capturar valores de la URL (ej: <code>/usuario/&lt;nombre&gt;</code>) y pasarlos como argumentos a la función.</li>
     </ul>
     <div class="code-block">
         <h3>Ejemplo de Ruta y Función:</h3>
@@ -45,8 +45,8 @@ def saludar(nombre):
     <p>Para crear contenido web dinámico y complejo, Flask utiliza el motor de plantillas <strong>Jinja2</strong>. Esto permite separar la lógica de la aplicación (Python) de su presentación (HTML).</p>
     <ul>
         <li><strong>Función Clave:</strong> Usamos la función <code>render_template()</code> para buscar un archivo HTML en la carpeta <code>templates</code> y llenarlo con datos.</li>
-        <li><strong>Variables Dinámicas:</strong> Dentro del HTML, usamos la sintaxis de doble llave <code>&#123;&#123; variable &#125;&#125;</code> para insertar valores pasados desde la función de Flask.</li>
-        <li><strong>Herencia de Plantillas:</strong> Aprendimos a usar <code>&#123;% extends 'base.html' %&#125;</code> y <code>&#123;% block content %&#125;</code> para reutilizar la estructura básica de la página.</li>
+        <li><strong>Variables Dinámicas:</strong> Dentro del HTML, usamos la sintaxis de doble llave <code>{{ variable }}</code> para insertar valores pasados desde la función de Flask.</li>
+        <li><strong>Herencia de Plantillas:</strong> Aprendimos a usar <code>{% extends 'base.html' %}</code> y <code>{% block content %}</code> para reutilizar la estructura básica de la página.</li>
     </ul>
     <div class="code-block">
         <h3>Ejemplo de Uso de Plantillas:</h3>
@@ -66,5 +66,4 @@ def home():
     <h2>⚙️ El Alcance de Flask</h2>
     <p>Flask nos enseñó el concepto de la <strong>arquitectura cliente-servidor</strong>. Es la base para manejar sesiones de usuario, procesar datos de formularios (POST) y servir páginas web complejas, siendo una herramienta versátil para pequeños proyectos y APIs.</p>
 </div>
-
 {% endblock %}
